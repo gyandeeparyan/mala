@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-0: #110d09;
+  --bg-1: #1c1610;
+  --ink: #efe6d8;
+  --ink-dim: #9c9082;
+  --gold: #e3a33d;
+  --gold-soft: rgba(227, 163, 61, 0.18);
+  --bead: #4a3c2b;
+  --bead-line: #2c2419;
+}
+
+.dark {
+  --bg-0: #0f1013;
+  --bg-1: #161922;
+  --ink: #e6ebf2;
+  --ink-dim: #95a0af;
+  --gold: #f0b86a;
+  --gold-soft: rgba(240, 184, 106, 0.2);
+  --bead: #2b3340;
+  --bead-line: #212835;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+  user-select: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(ellipse at 50% 30%, var(--bg-1), var(--bg-0) 70%);
+}
+
+.title-font {
+  font-family: "Fraunces", serif;
+}
+
+@keyframes slow-spin {
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+.ring-spin {
+  animation: slow-spin 240s linear infinite;
+}
+
+@keyframes count-flash {
+  0% {
+    color: var(--gold);
+    text-shadow: 0 0 24px var(--gold-soft);
+  }
+  100% {
+    color: var(--ink);
+    text-shadow: none;
+  }
+}
+
+.count-flash {
+  animation: count-flash 0.7s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .count-flash {
+    animation: none;
+  }
+}

@@ -1,0 +1,11 @@
+node_modules/
+
+# Next.js build artifacts
+.next/
+out/
+
+# Local production/build outputs
+dist/
+
+# TypeScript build cache
+*.tsbuildinfo
